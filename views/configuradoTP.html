@@ -1,0 +1,32 @@
+
+<div>
+  <h3>{{titulo}}</h3>
+  <div ui-grid="gridOptions" class="myGrid"
+    ui-grid-pagination
+    ui-grid-resize-columns
+  ></div>
+  </br></br>
+   <div>
+   		<h3>Ubicacion de {{nombreU}} {{apellidoU}}</h3>
+    	<ng-map center="[{{latitud}}, {{longitud}}]" style="width:700px; height:500px;">
+    		<marker icon="{{avatarU}}" position ="[{{latitud}}, {{longitud}}]" title="{{nombreU}} {{apellidoU}}" animation="Animation.DROP"></marker>
+    	</ng-map>
+    </div>
+
+  </br></br>
+   <div>
+   		<h3>Amigos de {{nombreA}} {{apellidoA}}</h3>
+  		<div ui-grid="gridAmigos" class="myGrid"></div>
+	</div>
+
+  </br></br>
+   <div>
+   		<h3>Ubicacion de amigos de {{nombreG}} {{apellidoG}}</h3>
+    	<ng-map center="[{{latitudG}}, {{longitudG}}]" style="width:700px; height:500px;">
+    		<marker icon="{{avatarG}}" position ="[{{latitudG}}, {{longitudG}}]" title="{{nombreG}} {{apellidoG}}" animation="Animation.DROP"></marker>
+ 
+    		<marker ng-repeat="amigo in amigos" position="[{{amigo.latitud}},{{amigo.longitud}}]" icon="{{amigo.avatar}}" title="{{amigo.nombre}} {{amigo.apellido}}" animation="Animation.DROP">
+        </marker> 
+    	</ng-map>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "name": "labo",
+  "authors": [
+    "Eugenia <eugenia>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular-ui-grid": "ui-grid#^3.1.1",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "*",
+    "pdfmake": "^0.1.20",
+    "ng-maps": "ng-map#*",
+    "ngmap": "^1.17.8"
+  }
+}

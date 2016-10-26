@@ -9,7 +9,7 @@
    <div>
    		<h3>Ubicacion de {{nombreU}} {{apellidoU}}</h3>
     	<ng-map center="[{{latitud}}, {{longitud}}]" style="width:700px; height:500px;">
-    		<marker icon="{{avatarU}}" position ="[{{latitud}}, {{longitud}}]" title="{{nombreU}} {{apellidoU}}" animation="Animation.DROP"></marker>
+    		<marker icon="{{avatarU}}" position ="[{{latitud}}, {{longitud}}]" title="{{nombreU}} {{apellidoU}}" ></marker>
     	</ng-map>
     </div>
 
@@ -23,9 +23,9 @@
    <div>
    		<h3>Ubicacion de amigos de {{nombreG}} {{apellidoG}}</h3>
     	<ng-map center="[{{latitudG}}, {{longitudG}}]" style="width:700px; height:500px;">
-    		<marker icon="{{avatarG}}" position ="[{{latitudG}}, {{longitudG}}]" title="{{nombreG}} {{apellidoG}}" animation="Animation.DROP"></marker>
+    		<marker icon="{{avatarG}}" position ="[{{latitudG}}, {{longitudG}}]" title="{{nombreG}} {{apellidoG}}" ></marker>
  
-    		<marker ng-repeat="amigo in amigos" position="[{{amigo.latitud}},{{amigo.longitud}}]" icon="{{amigo.avatar}}" title="{{amigo.nombre}} {{amigo.apellido}}" animation="Animation.DROP">
+    		<marker ng-repeat="amigo in amigos" position="[{{amigo.latitud}},{{amigo.longitud}}]" icon="{{amigo.avatar}}" title="{{amigo.nombre}} {{amigo.apellido}}" >
         </marker> 
     	</ng-map>
     </div>

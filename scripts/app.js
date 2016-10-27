@@ -44,4 +44,10 @@ angular
       templateUrl: 'views/configuradoTP.html',
       controller:'ConfiguradoCtrl'
     })
+
+    .state('banderas', {
+      url: '/banderas',
+      templateUrl: 'views/banderas.html',
+      controller:'BanderasCtrl'
+    })
   });

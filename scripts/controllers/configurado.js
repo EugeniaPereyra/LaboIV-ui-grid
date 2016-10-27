@@ -62,7 +62,7 @@ angular
 
     $scope.Localizar=function(row){
       console.info(row);
-      console.info('Latitud: '+row.Latitud+', Longitud: '+row.Longitud);
+      console.info('Latitud: '+row.latitud+', Longitud: '+row.logitud);
       $scope.latitud=row.latitud;
       $scope.longitud=row.logitud;
       $scope.nombreU=row.nombre;

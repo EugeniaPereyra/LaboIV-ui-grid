@@ -12,12 +12,15 @@ angular
     $scope.gridPaises.enableFiltering = true;
     i18nService.setCurrentLang('es');
 
-    function callback(dato)
+    function callbackTodo(dato)
     {
       console.info(dato);
       $scope.gridPaises.data = dato;
+    }
 
-      //$scope.lista = dato;
+    function callback(dato)
+    {
+      console.info(dato);
     }
 
     function error(err)
@@ -25,18 +28,20 @@ angular
       console.log(err);
     }
 
-    banderas.traerTodo().then(callback, error);
+    banderas.traerTodo().then(callbackTodo, error);
     banderas.traerNombre().then(callback, error);
     banderas.traerBanderas().then(callback, error);
-
-    
 
     function columPaises () {
       return [
             { field: 'Nombre', name: 'nombre'},
-            { field: 'BanderaChica', name: 'banderaChica', cellTemplate:"<img width=\"30px\" ng-src=\"{{grid.getCellValue(row, col)}}\" lazy-src>" },
-            { field: 'Bandera', name: 'bandera', cellTemplate:"<img width=\"20px\" ng-src=\"{{grid.getCellValue(row, col)}}\" lazy-src>" }
+            { field: 'Bandera', name: 'bandera', cellTemplate:"<img width=\"50px\" ng-src=\"{{grid.getCellValue(row, col)}}\" lazy-src>" },
+            { field: 'Boton', displayName: 'Boton', cellTemplate:"<button ng-click='grid.appScope.paisDetalle(row.entity)'>DETALLE</button>"}
           ];
         }
+
+    $scope.paisDetalle=function(row){
+      console.info(row);
+    }
 
   })

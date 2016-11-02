@@ -3,13 +3,11 @@ angular
   .service('banderas', function ($http) {
 
     this.traerBanderas = function () {
-      return $http.get('http://www.egos27.somee.com/api/bandera').then(function(respuesta){
-        var banderas=[];
-        angular.forEach(respuesta.data.Paises, function(value){
-          banderas.push(value.Bandera);
+      var banderas=[];
+      return this.traerTodo().then(function(respuesta){
+        banderas=respuesta.map(function(dato){
+          return dato.Bandera;
         })
-        //console.info(respuesta.data);
-
         return banderas;
       });
     }
@@ -23,12 +21,9 @@ angular
 
     this.traerNombre = function (nombre) {
       var nombres=[];
-
       return this.traerTodo().then(function(respuesta){
         nombres=respuesta.map(function(dato){
-          var obj={};
-          obj.Nombre=dato.Nombre;
-          return obj;
+          return dato.Nombre;
         })
         return nombres;
       });

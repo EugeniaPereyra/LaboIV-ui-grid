@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .controller('BanderasFactoryCtrl', function($scope, banderasFac, i18nService, uiGridConstants) {
+  .controller('BanderasFactoryCtrl', function($scope, banderasFac, banderasFac2, i18nService, uiGridConstants) {
     $scope.titulo = "BANDERAS FACTORIA";
 
     $scope.gridPaises={};
@@ -28,9 +28,13 @@ angular
       console.log(err);
     }
 
-    banderasFac.traerTodo().then(callbackTodo, error);
-    banderasFac.traerNombre().then(callback, error);
-    banderasFac.traerBanderas().then(callback, error);
+    // banderasFac.traerTodo().then(callbackTodo, error);
+    // banderasFac.traerNombre().then(callback, error);
+    // banderasFac.traerBanderas().then(callback, error);
+
+    banderasFac2.traerTodo().then(callbackTodo, error);
+    banderasFac2.traerNombre().then(callback, error);
+    banderasFac2.traerBanderas().then(callback, error);
 
     function columPaises () {
       return [

@@ -50,4 +50,10 @@ angular
       templateUrl: 'views/banderas.html',
       controller:'BanderasCtrl'
     })
+
+    .state('banderasFc', {
+      url: '/banderasFactoria',
+      templateUrl: 'views/factory.html',
+      controller:'BanderasFactoryCtrl'
+    })
   });

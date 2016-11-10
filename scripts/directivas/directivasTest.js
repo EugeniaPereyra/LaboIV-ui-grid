@@ -30,5 +30,25 @@ angular.module("app")
 
 })
 
+.directive('utnTemplateParametro', function(){
+
+	return{
+		restrict: "E",
+		replace: true,
+		scope: {miTitulo: '@dato'},
+		templateUrl: "views/template1.html"
+	}
+
+})
+
+.directive('utnBanderas', function(){
+
+	return{
+		restrict: "E",
+		replace: true,
+		templateUrl: "views/template1.html"
+	}
+
+})
 
 ;
